@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.example.smart_jewellerry",
+      "sha256_cert_fingerprints": [
+        "B1:65:74:90:72:83:40:36:DA:01:9A:39:6D:F1:67:DA:A0:14:81:D3:7B:E6:7C:FE:97:7C:B8:2A:33:1A:B3:5B"
+      ]
+    }
+  }
+]

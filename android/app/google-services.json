@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "900702835071",
+    "project_id": "smart-jewelry",
+    "storage_bucket": "smart-jewelry.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:900702835071:android:78a915594ffc9bff268a4a",
+        "android_client_info": {
+          "package_name": "com.example.smart_jewellerry"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdxJCe16yHY0VDjcGrgRA6InSPzuw9F7Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -192,6 +192,9 @@ class _CustomerListState extends State<CustomerList> {
                                           IconButton(
                                             icon: Icon(Icons.delete),
                                             onPressed: () {
+                                              setState(() {
+                                                globalUserID = customersData[index]["id"] ;
+                                              });
                                               deleteCOnfirm(customersData);
 
                                             },
@@ -220,7 +223,7 @@ class _CustomerListState extends State<CustomerList> {
   }
 
 
-  Future<void> _deleteCustomer(String docId, List<Map<String, dynamic>> customersData) async {
+  Future<void> _deleteCustomer(String globalUserID, List<Map<String, dynamic>> customersData) async {
     try {
       // Reference to the customer document using the provided document ID
       DocumentReference customerDocRef = FirebaseFirestore.instance
@@ -229,10 +232,10 @@ class _CustomerListState extends State<CustomerList> {
           .collection('Firms')
           .doc(globalFirmNameAllApp)
           .collection('Customer')
-          .doc(docId);
+          .doc(globalUserID);
 
       // Find the index of the customer data with the matching document ID
-      int index = customersData.indexWhere((customer) => customer['id'] == docId);
+      int index = customersData.indexWhere((customer) => customer['id'] == globalUserID);
 
       // Delete the customer document if found
       if (index != -1) {
@@ -253,7 +256,7 @@ class _CustomerListState extends State<CustomerList> {
 
         print('Customer deleted successfully.');
       } else {
-        print('Customer with ID $docId not found.');
+        print('Customer with ID $globalUserID not found.');
       }
     } catch (e) {
       print('Error deleting customer: $e');

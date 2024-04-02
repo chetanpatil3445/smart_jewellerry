@@ -98,16 +98,15 @@ class _CustomerListState extends State<CustomerList> {
               itemCount: customersData.length,
               itemBuilder: (context, index) {
                 final customerData = customersData[index];
-                final docId = customerData['id'];
-                globalUserID = customerData['id'];
+
                 return Padding(
                   padding: const EdgeInsets.only(left: 4.0),
                   child: GestureDetector(
                     onTap: () {
-                      print(docId);
                       setState(() {
-                        globalUserID = docId ;
+                        globalUserID = customersData[index]["id"] ;
                       });
+                      print(globalUserID);
                       // Navigate to the UpdateCustomer page and pass the document ID
                       Navigator.push(
                         context,
